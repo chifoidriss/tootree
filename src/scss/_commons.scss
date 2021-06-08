@@ -2,6 +2,9 @@ body {
     font-family: $font-family;
 }
 
+.pointer {
+    cursor: pointer;
+}
 
 .bx {
     font-size: 22px;
@@ -10,6 +13,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: fit-content;
+    padding: .5px;
+    text-decoration: none;
+
+    &.circle {
+        border-radius: 50%;
+    }
+    &.primary {
+        background-color: $first-color-1;
+        color: #FFFFFF;
+    }
+    &.t-primary {
+        background-color: transparent;
+        color: $first-color-1;
+    }
+    &.white {
+        background-color: #FFFFFF;
+        color: $first-color-2;
+    }
+    &.light {
+        background-color: $light-color;
+        color: #000000;
+    }
 }
 
 .custom-control {
@@ -33,6 +59,11 @@ body {
     justify-content: center;
     align-items: center;
 
+    &.xs {
+        height: 24px;
+        width: 24px;
+    }
+
     img {
         width: 100%;
         height: auto;
@@ -44,6 +75,13 @@ body {
     border-radius: $border-radius;
     display: flex;
     flex-direction: column;
+
+    &.primary {
+        background-color: $active-color-2;
+    }
+    &.primary-1 {
+        background-color: $active-color-3;
+    }
 
     .card-head {
         padding: .5rem .75rem;
@@ -58,6 +96,79 @@ body {
 
     .card-body {
         padding: .5rem .75rem;
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        .text {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+        }
+    }
+}
+
+.custom-btn {
+    text-decoration: none;
+    padding: 7px 16px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: transparent;
+    color: unset;
+    font-weight: 500;
+    text-align: center;
+
+    &.block {
+        width: 100%;
+        display: block;
+    }
+    
+    &.primary {
+        background: linear-gradient(180deg, #FF8434 0%, #FE5921 100%);
+        color: #FFFFFF;
+    }
+    &.t-primary {
+        background: transparent;
+        color: $first-color-1;
+    }
+    &.light {
+        background: $light-color-1;
+        color: #000000;
+    }
+    &.link {
+        text-decoration: underline;
+
+    }
+}
+
+.user-block {
+    .block-user {
+        margin-bottom: .75rem;
+        display: flex;
+    
+        .user-user {
+            flex: 1;
+        }
+    
+        .title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: .5rem;
+        }
+    
+        .subtitle {
+            font-size: 12px;
+            font-weight: 400;
+            
+            div {
+                font-weight: 700;
+            }
+        }
     }
 }
 
@@ -201,6 +312,27 @@ body {
     width: $aside-width;
     height: 100%;
     // border-left: 1px solid $first-color-2;
+
+    .messages {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: $aside-width;
+
+        .content {
+            background-color: $light-color;
+            border-radius: $border-radius $border-radius 0 0;
+
+            .title {
+                padding: .75rem 2rem;
+                font-size: 18px;
+                font-weight: 700;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
 }
 
 
@@ -221,7 +353,12 @@ body {
         .post-user {
             margin-bottom: .75rem;
             display: flex;
-            
+
+            &.post-item {
+                border-bottom: 1px solid #DDD;
+                padding-bottom: 5px;
+            }
+
             .username {
                 font-weight: 700;
                 margin-right: .5rem;
@@ -239,8 +376,14 @@ body {
             .content-message {
                 margin-top: .5rem;
                 .attach-file {
-                    color: $first-color-2;
+                    color: $first-color-3;
+                    font-weight: 700;
+                    text-decoration: none;
                 }
+            }
+
+            .reply-post {
+                margin-top: 1rem;
             }
         }
 
