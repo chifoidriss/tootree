@@ -15,21 +15,24 @@
 <body>
     <header class="header">
         <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-3">
+            <div class="d-flex align-items-center">
+                <span class="bx-icon pointer d-lg-none d-md-unset" id="open-aside-left">
+                    <i class="bx bx-md bx-menu"></i>
+                </span>
+                <div class="a">
                     <div class="logo-brand ms-md-4 ms-0">
                         <img src="./assets/img/icons/logo.svg" alt="Logo">
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="search-form">
-                        <input type="text" name="search" id="search" class="custom-control search-input" placeholder="Rechercher">
+                <div class="b">
+                    <div class="search-form px-1">
+                        <input type="text" name="search" id="search" class="custom-control round search-input" placeholder="Rechercher">
                         <span class="search-btn">
                             <i class="bx bx-tada-hover bx-search"></i>
                         </span>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="c">
                     <div class="profile me-md-4 me-0 d-flex justify-content-end align-items-center">
                         <div class="profile-items me-md-4 me-0 d-flex align-items-center">
                             <span class="item me-md-1 me-0">
@@ -57,7 +60,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bxs-home"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#entraide" class="menu-title">
                     Mur d'entraide
                 </a>
             </div>
@@ -65,7 +68,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bx-file"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#tootime" class="menu-title">
                     Tootime
                 </a>
             </div>
@@ -73,7 +76,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bx-gift"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#toobox" class="menu-title">
                     Toobox
                 </a>
             </div>
@@ -81,7 +84,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bx-detail"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#exercices" class="menu-title">
                     Exercices
                 </a>
             </div>
@@ -89,7 +92,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bx-message-rounded-detail"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#messages" class="menu-title">
                     Messages
                 </a>
             </div>
@@ -97,7 +100,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bx-user"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#profile" class="menu-title">
                     Profile
                 </a>
             </div>
@@ -105,7 +108,7 @@
                 <span class="menu-icon">
                     <i class="bx bx-tada-hover bx-cog"></i>
                 </span>
-                <a href="#" class="menu-title">
+                <a href="#settings" class="menu-title">
                     Paramètres
                 </a>
             </div>
@@ -219,7 +222,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="messages">
             <div class="container-fluid">
                 <div class="content">
@@ -230,24 +233,111 @@
                             </div>
                             <span class="ms-1">Messagerie</span>
                         </div>
-                        <span class="bx-icon pointer">
+                        <span class="bx-icon pointer" id="open-message">
                             <i class="bx bx-tada-hover bx-sm bx-chevron-up"></i>
                         </span>
+                    </div>
+    
+                    <div class="body" id="body-message">
+                        <div class="custom-card white message-block">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="user-avatar me-2">
+                                    <img src="./assets/img/users/user-3.png" alt="">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="username">Achille Hadj</div>
+                                        <div class="post-date">2 min</div>
+                                    </div>
+                                    <div class="message-content">C’est un plaisir.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-card white message-block">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="user-avatar me-2">
+                                    <img src="./assets/img/users/user-2.png" alt="">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="username">Hortense M</div>
+                                        <div class="post-date">2 min</div>
+                                    </div>
+                                    <div class="message-content">Un nouveau me...</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </aside>
 
-    <main class="main">
+    <div class="overlay"></div>
+
+
+    <main class="main" id="entraide">
         <div class="container-fluid">
-            <div class="custom-card poster">
-                <div class="card-body d-flex align-items-center">
-                    <div class="user-avatar me-4">
+            <div class="custom-card poster" id="poster-message">
+                <div class="card-body d-flex">
+                    <div class="user-avatar flex-fill me-4">
                         <img src="./assets/img/users/user-2.png" alt="">
                     </div>
-                    <div class="poster-message">
-                        Quelle est votre difficulté ?
+                    <div class="poster-message flex-fill">
+                        <div class="text pt-3 pointer" id="post-message">
+                            Quelle est votre difficulté ?
+                        </div>
+                        <div class="post-content">
+                            <div class="d-flex flex-column">
+                                <div class="">
+                                    <div class="subject co x-40">
+                                        <select name="subject" id="subject" class="custom-control light round">
+                                            <option value="">Choisir la matière</option>
+                                            <option value="fr">Maths</option>
+                                            <option value="en">Anglais</option>
+                                        </select>
+                                    </div>
+                                    <div class="lesson co x-60 ps-2">
+                                        <select name="lesson" id="lesson" class="custom-control light round">
+                                            <option value="fr">Choisir la leçon</option>
+                                            <option value="en">Simple</option>
+                                            <option value="en">Complexe</option>
+                                        </select>
+                                    </div>
+                                    <div class="lesson co x-100 mt-2">
+                                        <textarea name="message" id="message" rows="3" placeholder="Quelle est votre difficulté ?" class="custom-control light round"></textarea>
+                                    </div>
+                                </div>
+    
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div class="flex-1 d-flex">
+                                        <span class="bx-icon t-primary pointer">
+                                            <i class="bx bx-tada-hover bxs-circle"></i>
+                                        </span>
+                                        <span class="bx-icon t-secondary pointer mx-1">
+                                            <i class="bx bx-tada-hover bxs-circle"></i>
+                                        </span>
+                                        <span class="bx-icon t-tertiary pointer">
+                                            <i class="bx bx-tada-hover bxs-circle"></i>
+                                        </span>
+                                    </div>
+    
+                                    <div class="d-flex align-items-center">
+                                        <span class="bx-icon t-primary pointer">
+                                            <i class="bx bx-tada-hover bxs-microphone"></i>
+                                        </span>
+                                        <span class="bx-icon t-primary pointer mx-2">
+                                            <i class="bx bx-tada-hover bx-image"></i>
+                                        </span>
+                                        <div class="flex-fill">
+                                            <button class="custom-btn px-md-5 px-2 block primary pointer">
+                                                Poster
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,7 +345,7 @@
             <div class="custom-card post mt-3">
                 <div class="card-head mt-2">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex">
+                        <div class="d-flex flex-wrap">
                             <div class="title me-2">
                                 Reseaux Informatiques
                             </div>
@@ -275,9 +365,9 @@
                             <img src="./assets/img/users/user-3.png" alt="">
                         </div>
                         <div class="">
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center flex-wrap">
                                 <div class="username">Achille Hadj - </div>
-                                <div class="classe">Etudiante en genie logiciel et maintenance informatique</div>
+                                <div class="classe">Étudiante en genie logiciel et maintenance informatique</div>
                             </div>
                             <div class="post-date">Il y a 6 jours</div>
                         </div>
@@ -341,12 +431,12 @@
                         </div>
                         <div class="mt-2 d-flex flex-column">
                             <div class="post-user post-item">
-                                <div class="user-avatar me-2">
+                                <div class="user-avatar flex-auto me-2">
                                     <img src="./assets/img/users/user-2.png" alt="">
                                 </div>
                                 <div class="">
                                     <div class="owner-post">
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center flex-wrap">
                                             <div class="username">Hortense Mebe </div>
                                             <span class="bx-icon circle primary me-1">
                                                 <i class="bx bx-tada-hover bx-xs bx-check"></i>
@@ -453,5 +543,58 @@
             </div>
         </div>
     </main>
+
+    <!-- <main class="main" id="toobox">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="custom-card primary">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="primary-1">
+                                    <b>72 Documents</b>
+                                    <br>
+                                    En attente
+                                </div>
+                                <div class="bx-icon">
+                                    <i class="bx bx-tada-hover bx-dots-vertical-rounded"></i>
+                                </div>
+                            </div>
+
+                            <div class="mt-5">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="custom-card">
+                        <div class="card-body">
+                            <div class="title">
+                                Demande de documents récente
+                            </div>
+                            <div class="documents">
+                                <div class="d-flex align-items-start">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bx-md bxs-file-blank"></i>
+                                    </span>
+
+                                    <div class="d-flex flex-column">
+                                        <span><b>Programmation JAVA.pdf</b></span>
+                                        <span>Crée le 12 Novembre 2020 à 08:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main> -->
+
+    <script src="./assets/plugins/jquery/jquery.min.js"></script>
+    <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

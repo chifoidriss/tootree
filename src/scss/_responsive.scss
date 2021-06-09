@@ -1,0 +1,68 @@
+
+@media screen and (max-width: 766px) {
+    .header {
+        padding: $header-padding-sm;
+        height: $header-height-sm;
+    }
+    .aside-left {
+        top: $header-height-sm;
+        left: -100%;
+        width: $aside-width-xs;
+    }
+    .aside-right {
+        top: $header-height-sm;
+        right: -100%;
+        
+        .messages {
+            width: $aside-width-xs;
+            .title {
+                padding: 0 1rem !important;
+                font-size: 14px !important;
+                .user-avatar {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    .main {
+        margin-top: $header-height-sm;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 991px) {
+    .header {
+        padding: $header-padding-sm;
+        height: $header-height-sm;
+    }
+    .aside-left {
+        top: $header-height-sm;
+        left: -100%;
+        width: $aside-width-sm;
+    }
+    .aside-right {
+        top: $header-height-sm;
+        right: 0;
+        width: $aside-width-sm;
+
+        .messages {
+            width: $aside-width-xs;
+            .title {
+                padding: 0 1rem !important;
+                font-size: 14px !important;
+                .user-avatar {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .main {
+        margin-top: $header-height-sm;
+        padding-left: 0;
+        padding-right: $aside-width-sm;
+    }
+}

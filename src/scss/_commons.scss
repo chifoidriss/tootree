@@ -2,6 +2,56 @@ body {
     font-family: $font-family;
 }
 
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 100000;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    -ms-transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease;
+
+    &.visible {
+        background-color: rgba(0, 0, 0, 0.6);
+        visibility: visible;
+        opacity: 1;
+    }
+    &.visible-no-backdrop {
+        background-color: rgba(0, 0, 0, 0);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.co {
+	margin: 0;
+	padding: 0;
+	float: left;
+	box-sizing: border-box;
+    
+    &.x-100 { width: 100%; }
+    &.x-90 { width: 90%; }
+    &.x-80 { width: 80%; }
+    &.x-75 { width: 75%; }
+    &.x-70 { width: 70%; }
+    &.x-60 { width: 60%; }
+    &.x-50 { width: 50%; }
+    &.x-40 { width: 40%; }
+    &.x-30 { width: 30%; }
+    &.x-25 { width: 25%; }
+    &.x-20 { width: 20%; }
+    &.x-10 { width: 10%; }
+}
+
+
 .pointer {
     cursor: pointer;
 }
@@ -28,6 +78,14 @@ body {
         background-color: transparent;
         color: $first-color-1;
     }
+    &.t-secondary {
+        background-color: transparent;
+        color: $second-color;
+    }
+    &.t-tertiary {
+        background-color: transparent;
+        color: $third-color;
+    }
     &.white {
         background-color: #FFFFFF;
         color: $first-color-2;
@@ -42,11 +100,17 @@ body {
     border-width: .075rem;
     border-color: transparent;
     border-style: solid;
-    // background-color: $light-color;
+    padding: 8px 12px;
+    width: 100%;
+
     &:hover, &:focus, &:active, &::selection {
         outline: 0;
         border-color: $first-color-1;
         box-shadow: $box-shadow;
+    }
+
+    &.round {
+        border-radius: $border-radius;
     }
 }
 
@@ -58,10 +122,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-basis: 48px;
+    
     &.xs {
         height: 24px;
         width: 24px;
+        flex-basis: 24px;
     }
 
     img {
@@ -76,6 +142,9 @@ body {
     display: flex;
     flex-direction: column;
 
+    &.white {
+        background-color: #FFFFFF;
+    }
     &.primary {
         background-color: $active-color-2;
     }
@@ -114,6 +183,8 @@ body {
 }
 
 .custom-btn {
+    position: relative;
+    overflow: hidden;
     text-decoration: none;
     padding: 7px 16px;
     border: none;
@@ -142,7 +213,46 @@ body {
     }
     &.link {
         text-decoration: underline;
+    }
 
+    &::selection, &:focus, &:hover {
+        border-color: transparent;
+        box-shadow: $box-shadow;
+    }
+
+    // &::after {
+    //     display: none;
+    //     content: "";
+    //     position: absolute;
+    //     border-radius: 40%;
+    //     background-color: rgba(0, 0, 0, 0.3);
+
+    //     width: 5px;
+    //     height: 5px;
+    //     margin-top: -5px;
+    //     margin-left: -5px;
+
+    //     /* Center the ripple */
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+
+    //     animation: ripple .3s;
+    //     opacity: 0;
+    // }
+    // &:focus:not(:active)::after {
+    //     display: block;
+    // }
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(10);
     }
 }
 
@@ -182,7 +292,15 @@ body {
     background-color: #FFFFFF;
     padding: $header-padding;
     height: $header-height;
-    // border-bottom: 1px solid $first-color-2;
+    z-index: 200000;
+    transition: top .5s ease;
+
+    .a, .c {
+        flex: 1;
+    }
+    .b {
+        flex: 2;
+    }
 
     .logo-brand {
         
@@ -201,7 +319,6 @@ body {
             width: 100%;
             padding: 8px 35px 8px 20px;
             background: rgba(37, 36, 43, 0.04);
-            border-radius: $border-radius;
         }
 
         .search-btn {
@@ -237,9 +354,11 @@ body {
     position: fixed;
     top: $header-height;
     left: 0;
-    width: $aside-width;
+    width: $aside-width-md;
     height: 100%;
-    // border-right: 1px solid $first-color-2;
+    z-index: 100000;
+    transition: all .5s;
+    background-color: #FFFFFF;
 
     .menu {
         display: flex;
@@ -301,6 +420,11 @@ body {
             font-weight: 500;
         }
     }
+
+    &.open {
+        z-index: 200000;
+        left: 0;
+    }
 }
 
 
@@ -309,27 +433,57 @@ body {
     position: fixed;
     top: $header-height;
     right: 0;
-    width: $aside-width;
+    width: $aside-width-md;
     height: 100%;
-    // border-left: 1px solid $first-color-2;
+    z-index: 100000;
+    transition: all .5s;
+
+    &.open {
+        z-index: 200000;
+        right: 0;
+    }
 
     .messages {
         position: fixed;
         bottom: 0;
         right: 0;
-        width: $aside-width;
-
+        width: $aside-width-md;
+        z-index: 100000;
+    
         .content {
-            background-color: $light-color;
+            background-color: $light-color-1;
             border-radius: $border-radius $border-radius 0 0;
-
+    
             .title {
-                padding: .75rem 2rem;
+                padding: .75rem 1rem;
                 font-size: 18px;
                 font-weight: 700;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+    
+            .body {
+                // height: 0;
+                // overflow: hidden;
+                // transition: height .5s ease;
+                transition: all 1s ease;
+                // padding: 0;
+                display: none;
+    
+                padding: .75rem 1rem;
+                height: 300px;
+                &.open {
+                    display: block;
+                    // overflow: auto;
+                }
+    
+                .message-block {
+                    margin-bottom: .5rem;
+                    .user-avatar {
+                        // flex: 1;
+                    }
+                }
             }
         }
     }
@@ -337,15 +491,39 @@ body {
 
 
 
+
 .main {
     margin-top: $header-height;
     margin-bottom: 25px;
-    padding-left: $aside-width;
-    padding-right: $aside-width;
+    padding-left: $aside-width-md;
+    padding-right: $aside-width-md;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 
     .poster {
         .poster-message {
-            cursor: pointer;
+            .post-content {
+                height: 0;
+                overflow: hidden;
+                transition: all 1s ease;
+            }
+        }
+        &.open {
+            position: relative;
+            background-color: $light-color-1;
+            z-index: 200000;
+
+            .user-avatar {
+                display: none;
+            }
+            .text {
+                display: none;
+            }
+            .post-content {
+                height: auto;
+                overflow: visible;
+            }
         }
     }
 

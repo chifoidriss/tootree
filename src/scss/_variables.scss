@@ -10,6 +10,7 @@ $first-color-3: mix(#FF8434, #FE5921);
 $first-color-shadow: #FF843408;
 $box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.08);
 $second-color: #2CBF7B;
+$third-color: #3448FF;
 $active-color: #FBEBD3;
 $active-color-2: #FFF2DE;
 $active-color-3: #FFE8C5;
@@ -18,7 +19,11 @@ $light-color: rgba(37, 36, 43, 0.04);
 $light-color-1: #E6E6E6;
 
 $header-height: 90px;
+$header-height-sm: 65px;
 $header-padding: 15px 0;
-$aside-width: 25%;
+$header-padding-sm: 5px 0;
+$aside-width-md: 25%;
+$aside-width-sm: 33%;
+$aside-width-xs: 80%;
 
 $border-radius: 25px;
