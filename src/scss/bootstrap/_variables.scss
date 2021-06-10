@@ -46,6 +46,20 @@ $yellow:  #ffc107 !default;
 $green:   #198754 !default;
 $teal:    #20c997 !default;
 $cyan:    #0dcaf0 !default;
+
+
+// Customs colors 
+$first-1: #FF8434;
+$first-2: #FE5921;
+$first: mix($first-1, $first-2);
+$second: #2CBF7B;
+$third: #3448FF;
+$darky: #25242B;
+
+$active-color: #FBEBD3;
+$active-color-2: #FFF2DE;
+$active-color-3: #FFE8C5;
+
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -62,7 +76,12 @@ $colors: (
   "cyan":       $cyan,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "first":      $first,
+  "first-1":    $first-1,
+  "first-2":    $first-2,
+  "second":     $second,
+  "third":      $third,
+  "darky":      $darky,
 ) !default;
 // scss-docs-end colors-map
 
@@ -86,7 +105,13 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "first":      $first,
+  "first-1":    $first-1,
+  "first-2":    $first-2,
+  "second":     $second,
+  "third":      $third,
+  "darky":      $darky,
 ) !default;
 // scss-docs-end theme-colors-map
 

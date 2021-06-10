@@ -25,7 +25,7 @@ $(function () {
 
     var prevScrollPosition = window.pageYOffset;
     var header = document.querySelector(".header");
-    $(window).on('scroll', function () {
+    window.onscroll= function () {
         if (window.innerWidth < 766) {
             var currentScrollPosition = window.pageYOffset;
             if (prevScrollPosition > currentScrollPosition) {
@@ -37,5 +37,36 @@ $(function () {
         } else {
             header.style.top = "0";
         }
-    });
+    };
 });
+
+function _(element) {
+    var elt = document.querySelectorAll(element);
+}
+
+function includeFile() {
+    var htmlDocument = document.querySelectorAll('*');
+
+    htmlDocument.forEach(function (element) {
+        if (element.hasAttribute('#include')) {
+            var file = element.getAttribute('#include').trim();
+
+            httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        element.innerHTML = this.responseText;
+                    }
+                    if (this.status == 404) {
+                        element.innerHTML = "Page not found.";
+                    }
+                    element.removeAttribute("w3-include-html");
+                    includeFile();
+                }
+            };
+            httpRequest.open("GET", file, true);
+            httpRequest.send();
+            return;
+        }
+    });
+}

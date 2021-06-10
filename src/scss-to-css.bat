@@ -1,1 +1,1 @@
-sass scss/style.scss ../assets/css/style.css -s compressed --no-source-map --watch
+sass scss/style.scss:../assets/css/style.css scss/bootstrap/bootstrap.scss:../assets/css/bootstrap.min.css -s compressed --no-source-map --watch

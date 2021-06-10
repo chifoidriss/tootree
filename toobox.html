@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tootree - UI Design</title>
+
+    <link href="./assets/img/icons/logo.svg" rel="icon">
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/plugins/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="./assets/fonts/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <span class="bx-icon pointer d-lg-none d-md-unset" id="open-aside-left">
+                    <i class="bx bx-md bx-menu"></i>
+                </span>
+                <div class="a">
+                    <div class="logo-brand ms-md-4 ms-0">
+                        <img src="./assets/img/icons/logo.svg" alt="Logo">
+                    </div>
+                </div>
+                <div class="b">
+                    <div class="search-form px-1">
+                        <input type="text" name="search" id="search" class="custom-control round search-input" placeholder="Rechercher">
+                        <span class="search-btn">
+                            <i class="bx bx-tada-hover bx-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="c">
+                    <div class="profile me-md-4 me-0 d-flex justify-content-end align-items-center">
+                        <div class="profile-items me-md-4 me-0 d-flex align-items-center">
+                            <span class="item me-md-1 me-0">
+                                <select name="language" id="language" class="custom-control language-select">
+                                    <option value="fr">FR</option>
+                                    <option value="en">EN</option>
+                                </select>
+                            </span>
+                            <span class="item notification">
+                                <i class="bx bx-tada-hover bxs-bell"></i>
+                            </span>
+                        </div>
+                        <div class="user-avatar">
+                            <img src="./assets/img/users/user-2.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <aside class="aside-left">
+        <div class="d-flex flex-column justify-content-center">
+            <div class="menu active">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bxs-home"></i>
+                </span>
+                <a href="./index.html" class="menu-title">
+                    Mur d'entraide
+                </a>
+            </div>
+            <div class="menu">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bx-file"></i>
+                </span>
+                <a href="./tootime.html" class="menu-title">
+                    Tootime
+                </a>
+            </div>
+            <div class="menu">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bx-gift"></i>
+                </span>
+                <a href="./toobox.html" class="menu-title">
+                    Toobox
+                </a>
+            </div>
+            <div class="menu">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bx-detail"></i>
+                </span>
+                <a href="./exercices.html" class="menu-title">
+                    Exercices
+                </a>
+            </div>
+            <div class="menu">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bx-message-rounded-detail"></i>
+                </span>
+                <a href="./messages.html" class="menu-title">
+                    Messages
+                </a>
+            </div>
+            <div class="menu">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bx-user"></i>
+                </span>
+                <a href="./profile.html" class="menu-title">
+                    Profile
+                </a>
+            </div>
+            <div class="menu">
+                <span class="menu-icon">
+                    <i class="bx bx-tada-hover bx-cog"></i>
+                </span>
+                <a href="./settings.html" class="menu-title">
+                    Paramètres
+                </a>
+            </div>
+        </div>
+
+        <div class="theme">
+            <span class="icon">
+                <i class="bx bx-tada-hover bx-moon"></i>
+            </span>
+            <span class="title">
+                Mode clair
+            </span>
+        </div>
+    </aside>
+
+    <aside class="aside-right">
+        <div class="container-fluid">
+            <div class="custom-card">
+                <div class="card-body">
+                    <div class="custom-card primary">
+                        <div class="card-head mt-1">
+                            <div class="title">
+                                Suggestions
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex flex-column">
+                                <div class="user-block">
+                                    <div class="block-user">
+                                        <div class="user-avatar me-2">
+                                            <img src="./assets/img/users/user-2.png" alt="">
+                                        </div>
+                                        <div class="">
+                                            <div class="d-flex align-items-center">
+                                                <div class="title">Hortense Mebe</div>
+                                            </div>
+                                            <div class="subtitle">
+                                                Étudiante en genie logiciel et maintenance informatique
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bx-icon t-primary">
+                                                        <i class="bx bx-tada-hover bx-store"></i>
+                                                    </span>
+                                                    <span class="ms-2">
+                                                        Institut Universitaire de la Cote
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="">
+                                        <a href="#" class="custom-btn primary">
+                                            Suivre
+                                        </a>
+                                        <a href="#" class="custom-btn light ms-3">
+                                            Ignorer
+                                        </a>
+                                    </div>
+    
+                                    <div class="text-center mt-4">
+                                        <a href="#" class="custom-btn t-primary link">
+                                            Voir plus
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="custom-card primary mt-2">
+                        <div class="card-head mt-1">
+                            <div class="title">
+                                TooLive 
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="custom-card primary-1">
+                                <div class="card-body">
+                                    <div class="title">Analyse et Programmation</div>
+
+                                    <div class="subtitle">
+                                        18 Dec 2020, 15h (heure locale)
+                                        <br>
+                                        Dispensé par <b>Mr. Achille Hadj</b>
+                                    </div>
+
+                                    <div class="mt-1">
+                                        <a href="#" class="custom-btn primary block">
+                                            Suivre
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="custom-card primary mt-2">
+                        <div class="card-body">
+                            <div class="p-2 d-flex align-items-center justify-content-between">
+                                <div class="text">
+                                    Vous avez <b>3 nouveaux exercices</b>
+                                </div>
+                                <div class="">
+                                    <span class="bx-icon circle primary p-2 pointer">
+                                        <i class="bx bx-tada-hover bx-sm bx-chevron-right"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="messages">
+            <div class="container-fluid">
+                <div class="content">
+                    <div class="title">
+                        <div class="d-flex align-items-center">
+                            <div class="user-avatar xs">
+                                <img src="./assets/img/users/user-3.png" alt="">
+                            </div>
+                            <span class="ms-1">Messagerie</span>
+                        </div>
+                        <span class="bx-icon pointer" id="open-message">
+                            <i class="bx bx-tada-hover bx-sm bx-chevron-up"></i>
+                        </span>
+                    </div>
+    
+                    <div class="body" id="body-message">
+                        <div class="custom-card white message-block">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="user-avatar me-2">
+                                    <img src="./assets/img/users/user-3.png" alt="">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="username">Achille Hadj</div>
+                                        <div class="post-date">2 min</div>
+                                    </div>
+                                    <div class="message-content">C’est un plaisir.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-card white message-block">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="user-avatar me-2">
+                                    <img src="./assets/img/users/user-2.png" alt="">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="username">Hortense M</div>
+                                        <div class="post-date">2 min</div>
+                                    </div>
+                                    <div class="message-content">Un nouveau me...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="custom-card primary h-100">
+                        <div class="card-body">
+                            <div class="p-2 d-flex flex-column align-content-between">
+                                <div class="d-flex justify-content-between">
+                                    <div class="p-2 round-sm primary-1">
+                                        <b>72 Documents</b>
+                                        <br>
+                                        En attente
+                                    </div>
+                                    <div class="bx-icon">
+                                        <i class="bx bx-tada-hover bx-dots-vertical-rounded"></i>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-5 d-flex flex-column">
+                                    <div class="title">Mon space</div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>37,72 MB</span>
+                                        <span>5 GB</span>
+                                    </div>
+                                    <div class="progress" style="height: 7px;">
+                                        <div class="progress-bar bg-first" role="progressbar" style="width: 25%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="custom-card white">
+                        <div class="card-body">
+                            <div class="document-title">
+                                Demande de documents récente
+                            </div>
+                            
+                            <div class="documents">
+                                <div class="document-item">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bx-md bxs-file-blank"></i>
+                                    </span>
+                                    <div class="information">
+                                        <a class="filename" href="./toobox-single.html">
+                                            Programmation JAVA.pdf
+                                        </a>
+                                        <span class="created_at">
+                                            Crée le 12 Novembre 2020 à 08:00
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="document-item">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bx-md bxs-file-blank"></i>
+                                    </span>
+                                    <div class="information">
+                                        <a class="filename" href="./toobox-single.html">
+                                            Introduction au HTML5 & Css.pdf
+                                        </a>
+                                        <span class="created_at">
+                                            Crée le 12 Novembre 2020 à 08:00
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="document-item">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bx-md bxs-file-blank"></i>
+                                    </span>
+                                    <div class="information">
+                                        <a class="filename" href="./toobox-single.html">
+                                            POO.pdf
+                                        </a>
+                                        <span class="created_at">
+                                            Crée le 12 Novembre 2020 à 08:00
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between mt-4">
+                        <h4>Dossier</h4>
+                        <span class="text-first pointer">
+                            <b>Trier</b>
+                        </span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="folder bg-light">
+                                <div class="folder-icon">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bxs-folder"></i>
+                                    </span>
+                                    <span class="user-avatar sm">
+                                        <img src="./assets/img/users/user-3.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="information">
+                                    <span class="filename">
+                                        Cours d'Anglais
+                                    </span>
+                                    <span class="created_at">
+                                        Crée le 10 Juin 2021 à 10:32
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="folder bg-light">
+                                <div class="folder-icon">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bxs-folder"></i>
+                                    </span>
+                                    <span class="user-avatar sm">
+                                        <img src="./assets/img/users/user-2.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="information">
+                                    <span class="filename">
+                                        Cours d'Anglais
+                                    </span>
+                                    <span class="created_at">
+                                        Crée le 10 Juin 2021 à 10:32
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="folder bg-light">
+                                <div class="folder-icon">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bxs-folder"></i>
+                                    </span>
+                                    <span class="user-avatar sm">
+                                        <img src="./assets/img/users/user-2.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="information">
+                                    <span class="filename">
+                                        Cours d'Anglais
+                                    </span>
+                                    <span class="created_at">
+                                        Crée le 10 Juin 2021 à 10:32
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="folder bg-light">
+                                <div class="folder-icon">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bxs-folder"></i>
+                                    </span>
+                                    <span class="user-avatar sm">
+                                        <img src="./assets/img/users/user-3.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="information">
+                                    <span class="filename">
+                                        Cours d'Anglais
+                                    </span>
+                                    <span class="created_at">
+                                        Crée le 10 Juin 2021 à 10:32
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="folder bg-light">
+                                <div class="folder-icon">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bxs-folder"></i>
+                                    </span>
+                                    <span class="user-avatar sm">
+                                        <img src="./assets/img/users/user-2.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="information">
+                                    <span class="filename">
+                                        Cours d'Anglais
+                                    </span>
+                                    <span class="created_at">
+                                        Crée le 10 Juin 2021 à 10:32
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="folder bg-light">
+                                <div class="folder-icon">
+                                    <span class="bx-icon">
+                                        <i class="bx bx-tada-hover bxs-folder"></i>
+                                    </span>
+                                    <span class="user-avatar sm">
+                                        <img src="./assets/img/users/user-2.png" alt="">
+                                    </span>
+                                </div>
+                                <div class="information">
+                                    <span class="filename">
+                                        Cours d'Anglais
+                                    </span>
+                                    <span class="created_at">
+                                        Crée le 10 Juin 2021 à 10:32
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/plugins/jquery/jquery.min.js"></script>
+    <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
